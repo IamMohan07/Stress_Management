@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stress Assessment Tool</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/3f31cba18f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="bubble-bg-animation">
+  <!-- 50 Bubbles -->
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+
+  
+  <header>
+    <h1><span>🧠</span> <span class="highlight">Stress Assessment Tool</span></h1>
+    <p>Understand and manage your stress effectively</p>
+    <!-- Social Icons -->
+<div class="social-icons">
+  <a href="https://www.linkedin.com/in/amohankumar07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="icon linkedin" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://www.instagram.com/my_dear_lightbright?igsh=MXZuenhhdnZ0amJxcQ==" target="_blank" class="icon instagram" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://t.me/my_dear_lightbright" target="_blank" class="icon telegram" aria-label="Telegram">
+    <i class="fab fa-telegram-plane"></i>
+  </a>
+  <a href="mailto:mohankumar071104@gmail.com" class="icon email" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+<!-- Credit Line -->
+<h3 class="made-by">Made with <span class="heart">❤</span> by Mohan</h3>
+
+  </header>
+
+  <main>
+    <!-- Add spacing between header and main -->
+    <div style="height: 20px;"></div>
+
+    <!-- Combined control panel -->
+    <div class="control-panel">
+      
+      <!-- Role Dropdown -->
+      <div class="dropdown-group">
+        <label for="roleSelect" id="roleLabel"><span id="selectRoleLabel">Select Your Role:</span></label>
+        <select id="roleSelect" onchange="loadQuestions()" required>
+          <option value="select_now" disabled selected>&larr; Select &rarr;</option>
+          <option value="student_below18">Student (Below 18)</option>
+          <option value="student_above18">Student (Above 18)</option>
+          <option value="parent_father">Parent (Father)</option>
+          <option value="parent_mother">Parent (Mother)</option>
+          <option value="professional_private1">Private Job (Education Dep)</option>
+          <option value="professional_private2">Private Job (IT Dep)</option>
+          <option value="professional_government1">Government Job (Education Dep)</option>
+          <option value="professional_government2">Government Job (Transport Dep)</option>
+        </select>
+      </div>
+
+      <!-- Language Toggle + Read All -->
+      <div class="language-toggle">
+        <label for="languageToggle"><span id="languageLabel"></span></label>
+        <button id="languageToggle" onclick="toggleLanguage()">English / தமிழ்</button>
+        <button onclick="speakAllQuestions()"><span id="ReadAllLabel">🔊 Read All Questions</span></button>
+      </div>
+
+      <!-- Dark Mode Toggle -->
+      <div class="theme-toggle">
+        <label for="modeToggle"><span id="toggleDarkModeLabel">Dark Mode:</span></label>
+        <button id="modeToggle" onclick="toggleDarkMode()">🌞</button>
+      </div>
+    </div>
+
+    <!-- Questions Section -->
+    <div id="questions-section" class="question-container"></div>
+
+    <!-- Submit -->
+    <button id="submitButton" onclick="submitAnswers()" class="submit-btn">Submit Answers</button>
+
+    <!-- Results -->
+    <section class="results">
+      <div id="results-text"></div>
+      <canvas id="stressChart" width="300" height="300"></canvas>
+      <div id="copingStrategies"></div>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
